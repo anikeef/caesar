@@ -8,8 +8,10 @@
 <body>
   <h1>Caesar cipher</h1>
   <form action="index.html" method="get">
-    <input type="textarea" name="text" placeholder="Text" autofocus>
-    <input type="text" name="shift" placeholder="Shift" class="small">
+    <input type="textarea" name="text" placeholder="Text" autofocus
+     <%= "value=\"#{@text.caesar(@shift.to_i)}\"" if @text && @shift %>>
+    <input type="text" name="shift" placeholder="Shift" class="small"
+     <%= "value=\"#{@shift}\"" if @shift %>>
     <input type="submit" value="Chipher" class="small">
   </form>
 </body>
